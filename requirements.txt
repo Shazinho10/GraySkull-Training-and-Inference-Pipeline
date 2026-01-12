@@ -1,0 +1,18 @@
+# GPU-enabled PyTorch (CUDA 12.1)
+--index-url https://download.pytorch.org/whl/cu121
+
+torch==2.2.2
+torchvision==0.17.2
+torchaudio==2.2.2
+
+# Hugging Face Transformers
+transformers==4.39.3
+datasets>=2.18.0
+tokenizers>=0.19.1
+accelerate>=0.22.0
+safetensors
+
+# Utilities
+numpy==1.26.4
+hf-xet
+PyYAML==6.0.3

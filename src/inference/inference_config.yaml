@@ -1,0 +1,58 @@
+# Unified Inference Configuration
+# This file configures both Qwen and Llama inference pipelines
+
+# Global settings
+global:
+  seed: 42
+
+# Model configurations
+models:
+  qwen:
+    name: "dphn/dolphin-2.9.3-qwen2-0.5b"
+    use_float16: false
+    device_map: null  # Use default device selection (null = move to single device)
+    
+  llama:
+    name: "dphn/dolphin-2.9-llama3-8b"
+    use_float16: true
+    device_map: "auto"  # Use device_map="auto" for large models
+
+# Generation parameters
+generation:
+  max_new_tokens: 100
+  temperature: 0.7
+  top_p: 0.9
+  do_sample: true
+  
+  # Optional: Override per model (uncomment to use)
+  # model_overrides:
+  #   qwen:
+  #     max_new_tokens: 150
+  #     temperature: 0.8
+  #   llama:
+  #     max_new_tokens: 200
+  #     temperature: 0.6
+
+# Example prompts for testing
+example_prompts:
+  single:
+    - "Explain what artificial intelligence is in simple terms."
+    - "What is the most important discovery in physics?"
+    - "How does machine learning work?"
+  
+  batch:
+    - "What is machine learning?"
+    - "Explain neural networks simply."
+    - "What is Python used for?"
+  
+  chat:
+    - role: "user"
+      content: "Explain what artificial intelligence is in simple terms."
+    - role: "user"
+      content: "What are the key differences between supervised and unsupervised learning?"
+
+# Inference settings
+inference:
+  use_chat_template: true  # Use chat template for Qwen (if available)
+  verbose: true            # Print detailed generation info
+  show_memory_stats: true  # Show GPU memory statistics

@@ -1,0 +1,41 @@
+# Global settings
+global:
+  seed: 42
+  save_checkpoints: true
+
+# Model configurations
+models:
+  qwen:
+    name: "dphn/dolphin-2.9.3-qwen2-0.5b"
+    use_float16: false
+    deterministic: false
+    checkpoint_dir: "checkpoints_qwen"
+    single_checkpoint_dir: "checkpoints_qwen/single"
+    batch_checkpoint_dir: "checkpoints_qwen/batch"
+    
+  llama:
+    name: "dphn/dolphin-2.9-llama3-8b"
+    use_float16: true
+    deterministic: false
+    checkpoint_dir: "checkpoints_llama"
+    single_checkpoint_dir: "checkpoints_llama/single"
+    batch_checkpoint_dir: "checkpoints_llama/batch"
+
+# Training data
+training_data:
+  single_texts:
+    - "Explain what artificial intelligence is."
+    - "How does machine learning differ from traditional programming?"
+  
+  batch_texts:
+    - "What is machine learning?"
+    - "Explain neural networks simply."
+    - "What is Python used for?"
+    - "Explain deep learning briefly."
+
+# Pipeline settings
+pipeline:
+  total_steps: 8
+  reproducibility_tolerance:
+    float32: 1.0e-6
+    float16: 1.0e-4
