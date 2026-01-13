@@ -1,4 +1,17 @@
 __pycache__/
+venv/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
+*.pyzwz
+*.pyzwzw
+*.pyzwzwz
+*.pyzwzwzw
+*.pyzwzwzwz
 scraping_output/
 logs/
 checkpoints_qwen/
