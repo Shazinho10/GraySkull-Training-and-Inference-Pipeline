@@ -7,6 +7,7 @@ from pathlib import Path
 from datetime import datetime
 import json
 import yaml
+from src.utils.path import TRAINING_CONFIG_PATH
 
 
 # =============================================================================
@@ -15,7 +16,7 @@ import yaml
 class TrainingConfig:
     """Load training configuration from YAML file."""
     
-    def __init__(self, config_path: str = "training_config.yaml", model_type: str = "llama"):
+    def __init__(self, config_path: str = TRAINING_CONFIG_PATH, model_type: str = "llama"):
         """
         Initialize configuration from YAML file.
         
@@ -583,5 +584,5 @@ def main(config_path: str = "training_config.yaml"):
 
 if __name__ == "__main__":
     import sys
-    config_file = sys.argv[1] if len(sys.argv) > 1 else "training_config.yaml"
+    config_file = sys.argv[1] if len(sys.argv) > 1 else TRAINING_CONFIG_PATH
     results = main(config_file)

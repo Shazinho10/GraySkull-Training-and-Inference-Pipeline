@@ -7,6 +7,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from datetime import datetime
 import yaml
 from typing import Optional, Dict, Any, List
+from src.utils.path import INFERENCE_CONFIG_PATH
 
 
 # =============================================================================
@@ -15,7 +16,7 @@ from typing import Optional, Dict, Any, List
 class InferenceConfig:
     """Load inference configuration from YAML file."""
     
-    def __init__(self, config_path: str = "inference_config.yaml", model_type: str = "llama"):
+    def __init__(self, config_path: str = INFERENCE_CONFIG_PATH, model_type: str = "llama"):
         """
         Initialize configuration from YAML file.
         
@@ -411,5 +412,5 @@ def main(config_path: str = "inference_config.yaml"):
 
 if __name__ == "__main__":
     import sys
-    config_file = sys.argv[1] if len(sys.argv) > 1 else "inference_config.yaml"
+    config_file = sys.argv[1] if len(sys.argv) > 1 else INFERENCE_CONFIG_PATH
     main(config_file)
