@@ -1,0 +1,14 @@
+[
+    {
+        "question": "What is machine learning?",
+        "answer": "Machine learning is a subset of artificial intelligence that enables systems to automatically learn and improve from experience without being explicitly programmed.",
+        "contexts": ["Machine learning is a method of data analysis that automates analytical model building. It is a branch of artificial intelligence based on the idea that systems can learn from data, identify patterns and make decisions."],
+        "ground_truth": "Machine learning is a type of artificial intelligence that allows software applications to become more accurate at predicting outcomes without being explicitly programmed to do so."
+    },
+    {
+        "question": "How do neural networks work?",
+        "answer": "Neural networks work by processing information through interconnected layers of nodes called neurons. Each connection has a weight that adjusts during training to minimize prediction errors.",
+        "contexts": ["Neural networks are computing systems inspired by biological neural networks. They consist of layers of interconnected nodes that process information. The network learns by adjusting connection weights based on training data."],
+        "ground_truth": "Neural networks consist of layers of interconnected nodes or neurons that process and transform input data through weighted connections, learning patterns through backpropagation."
+    }
+]
