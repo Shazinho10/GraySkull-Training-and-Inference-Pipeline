@@ -1,0 +1,67 @@
+# Scraping Pipeline Configuration
+
+input:
+  # URLs to scrape - can be:
+  #   1. File path containing URLs (one per line) - set urls_file
+  #   2. List of URLs - set urls list
+  #   3. Leave both null and provide via command line --run argument
+  urls_file: "D:/Intellema/UAE-Project/GraySkull-Training-and-Inference-Pipeline/src/scraping/testing.txt"
+  urls:
+    # - "https://example.com"
+
+    # - "https://example.org"
+    # Example (uncomment to use):
+    # - "https://www.wikipedia.org"
+
+# Output settings
+output:
+  output_dir: "scraping_output"
+  file: "scraping_results.json"
+  checkpoint_file: "scraping_checkpoint.json"
+
+# Pipeline settings
+pipeline:
+  # Processing mod
+  parallel: true
+  max_workers: 3
+  
+  # Retry and error handling
+  max_retries: 3
+  retry_delay: 2.0
+  
+  # Rate limiting
+  rate_limit_delay: 1.0
+  
+  # Resume capability
+  resume: true
+
+# Scraper settings
+scraper:
+  # Browser settings
+  headless: true
+  wait_time: 10
+  
+  # User agent
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+
+# Content extraction settings
+extraction:
+  # Content classification
+  classify_content: true
+  extract_tags: true
+  extract_metadata: true
+  
+  # Content selection
+  min_text_length: 200
+
+# Supported platforms
+platforms:
+  social_media:
+    - twitter.com
+    - x.com
+    - facebook.com
+    - instagram.com
+    - linkedin.com
+    - youtube.com
+    - tiktok.com
+    - reddit.com
