@@ -16,3 +16,11 @@ safetensors
 numpy==1.26.4
 hf-xet
 PyYAML==6.0.3
+
+python-dotenv
+ragas
+langchain
+langchain-groq
+langchain-huggingface
+datasets
+sentence-transformers

@@ -1,0 +1,39 @@
+# RAGAS LLM Evaluation Pipeline Configuration
+model:
+  name: "llama-3.3-70b-versatile"   # Groq model (llama-3.3-70b-versatile, mixtral-8x7b-32768, gemma2-9b-it)
+  temperature: 0            
+  api_key_env: "GROQ_API_KEY"      
+
+
+embeddings:
+  model: "sentence-transformers/all-MiniLM-L6-v2"
+  
+# Evaluation Metrics Configuration
+metrics:
+  faithfulness: true                # Factual consistency with context
+  answer_relevancy: true            # How relevant the answer is to question
+  context_precision: true           # Precision of retrieved context
+  context_recall: true              # Recall of relevant context
+  answer_similarity: true           # Semantic similarity with ground truth
+  answer_correctness: true          # Overall correctness score
+
+# Data Configuration
+data:
+  input_file: "D:/Intellema/UAE-Project/GraySkull-Training-and-Inference-Pipeline/src/llm-eval-ragas/sample_data.json"     
+  input_format: "json"              
+  batch_size: 10              
+  
+# Column Mapping (map your data columns to RAGAS format)
+column_mapping:
+  question: "question"          
+  answer: "answer"                  
+  contexts: "contexts"              
+  ground_truth: "ground_truth"     
+
+# Output Configuration
+output:
+  output_dir: "evaluation_results" 
+  save_detailed_results: true
+  export_formats:                 
+    - csv
+    - json
