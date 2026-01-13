@@ -36,3 +36,13 @@ PyMuPDF==1.26.7
 
 # Optional: llama.cpp (local inference)
 llama_cpp_python==0.3.16
+hf-xet
+PyYAML==6.0.3
+
+python-dotenv
+ragas
+langchain
+langchain-groq
+langchain-huggingface
+datasets
+sentence-transformers
