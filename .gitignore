@@ -17,3 +17,10 @@ venv/
 
 .env
 .venv/
+scraping_output/
+logs/
+checkpoints_qwen/
+checkpoints_llama/
+.env
+.venv/
+evaluation_results/

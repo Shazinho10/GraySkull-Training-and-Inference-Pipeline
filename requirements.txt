@@ -1,18 +1,48 @@
-# GPU-enabled PyTorch (CUDA 12.1)
+# PyTorch (CUDA 12.1) 
 --index-url https://download.pytorch.org/whl/cu121
 
 torch==2.2.2
 torchvision==0.17.2
 torchaudio==2.2.2
 
-# Hugging Face Transformers
-transformers==4.39.3
-datasets>=2.18.0
-tokenizers>=0.19.1
-accelerate>=0.22.0
-safetensors
 
-# Utilities
+# Hugging Face / LLM stack
+transformers==4.39.3
+datasets==4.4.2
+tokenizers==0.15.2
+accelerate==1.12.0
+huggingface-hub==0.36.0
+safetensors==0.7.0
+hf-xet==1.2.0
+
+
+# Core utilities
 numpy==1.26.4
+pandas==2.3.3
+tqdm==4.67.1
+
+
+# Scraping & Parsing
+requests==2.32.5
+beautifulsoup4==4.14.3
+bs4==0.0.2
+readability-lxml==0.8.4.1
+
+# Selenium / Browser automation
+selenium==4.39.0
+
+# PDF Processing
+PyMuPDF==1.26.7
+
+# Optional: llama.cpp (local inference)
+llama_cpp_python==0.3.16
 hf-xet
 PyYAML==6.0.3
+
+python-dotenv
+ragas
+langchain
+langchain-groq
+langchain-huggingface
+datasets
+sentence-transformers

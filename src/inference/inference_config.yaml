@@ -1,7 +1,3 @@
-# Unified Inference Configuration
-# This file configures both Qwen and Llama inference pipelines
-
-# Global settings
 global:
   seed: 42
 
