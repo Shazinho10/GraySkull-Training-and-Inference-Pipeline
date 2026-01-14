@@ -1,4 +1,6 @@
 __pycache__/
+checkpoints*/
+logs/   
 venv/
 *.pyc
 *.pyo
@@ -12,6 +14,9 @@ venv/
 *.pyzwzwz
 *.pyzwzwzw
 *.pyzwzwzwz
+
+.env
+.venv/
 scraping_output/
 logs/
 checkpoints_qwen/
