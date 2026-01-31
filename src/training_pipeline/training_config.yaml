@@ -37,5 +37,5 @@ training_data:
 pipeline:
   total_steps: 8
   reproducibility_tolerance:
-    float32: 1.0e-6
-    float16: 1.0e-4
+    float32: 1.0e-7
+    float16: 1.0e-5

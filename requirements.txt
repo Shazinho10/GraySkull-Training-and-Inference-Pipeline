@@ -46,3 +46,7 @@ langchain-groq
 langchain-huggingface
 datasets
 sentence-transformers
+
+
+arxi
+pdfminer.six

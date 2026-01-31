@@ -9,9 +9,7 @@ input:
   urls:
     # - "https://example.com"
 
-    # - "https://example.org"
-    # Example (uncomment to use):
-    # - "https://www.wikipedia.org"
+
 
 # Output settings
 output:
@@ -22,7 +20,7 @@ output:
 # Pipeline settings
 pipeline:
   # Processing mod
-  parallel: true
+  parallel: false
   max_workers: 3
   
   # Retry and error handling
@@ -38,7 +36,7 @@ pipeline:
 # Scraper settings
 scraper:
   # Browser settings
-  headless: true
+  headless: false
   wait_time: 10
   
   # User agent

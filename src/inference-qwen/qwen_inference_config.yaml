@@ -1,0 +1,48 @@
+# =============================================================================
+# Qwen 1.5B Inference Configuration (Ollama)
+# =============================================================================
+
+# Ollama Server Configuration
+ollama:
+  base_url: "http://localhost:11434"
+  model_name: "qwen2.5:1.5b"  # Qwen 2.5 1.5B parameter model
+  timeout: 120  # Request timeout in seconds
+
+# Model Generation Parameters
+generation:
+  temperature: 0.7          # Controls randomness (0.0 = deterministic, 1.0 = creative)
+  top_p: 0.9               # Nucleus sampling threshold
+  top_k: 40                # Top-k sampling
+  max_tokens: 2048         # Maximum tokens to generate
+  repeat_penalty: 1.1      # Penalty for repeating tokens
+  seed: null               # Random seed (null for random)
+
+# System Prompt Configuration
+system_prompt: |
+  You are a helpful AI assistant powered by Qwen. You provide accurate, 
+  helpful, and concise responses. When you don't know something, you 
+  acknowledge it rather than making up information.
+
+# Logging Configuration
+logging:
+  level: "INFO"            # DEBUG, INFO, WARNING, ERROR
+  log_to_file: true
+  log_file: "logs/qwen_inference.log"
+
+# Performance Tracking
+performance:
+  track_time: true         # Track execution time for each request
+  track_tokens: true       # Track token usage
+  save_metrics: true       # Save performance metrics to file
+  metrics_file: "logs/qwen_metrics.json"
+
+# Batch Processing Configuration
+batch:
+  enabled: false
+  batch_size: 5
+  concurrent_requests: 2
+
+# Output Configuration
+output:
+  save_conversations: false
+  conversations_file: "logs/conversations.jsonl"

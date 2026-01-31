@@ -10,12 +10,12 @@ embeddings:
   
 # Evaluation Metrics Configuration
 metrics:
-  faithfulness: true                # Factual consistency with context
-  answer_relevancy: true            # How relevant the answer is to question
-  context_precision: true           # Precision of retrieved context
-  context_recall: true              # Recall of relevant context
-  answer_similarity: true           # Semantic similarity with ground truth
-  answer_correctness: true          # Overall correctness score
+  faithfulness: true              
+  answer_relevancy: true         
+  context_precision: true        
+  context_recall: true         
+  answer_similarity: true        
+  answer_correctness: true         
 
 # Data Configuration
 data:

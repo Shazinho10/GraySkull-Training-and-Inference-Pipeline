@@ -14,7 +14,7 @@ Metrics included:
 - Answer Correctness: Overall correctness score
 
 Usage:
-    from llm_eval_ragas import RAGASEvaluator, EvaluationConfig
+    from llm_eval_ragas import RAGASEvaluator
     
     # Initialize evaluator
     evaluator = RAGASEvaluator(config="eval_config.yaml")
@@ -26,7 +26,7 @@ Usage:
     evaluator.generate_report(results)
 """
 
-from .ragas_evaluator import RAGASEvaluator, EvaluationConfig
+from .ragas_evaluator import RAGASEvaluator
 
-__all__ = ["RAGASEvaluator", "EvaluationConfig"]
+__all__ = ["RAGASEvaluator"]
 __version__ = "1.0.0"

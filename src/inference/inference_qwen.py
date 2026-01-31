@@ -291,7 +291,7 @@ def main(config_path: str = "inference_config.yaml"):
     Args:
         config_path: Path to YAML configuration file
     """
-    print_header("QWEN DOLPHIN INFERENCE SCRIPT", "=")
+    print_header("QWEN INFERENCE SCRIPT", "=")
     print(f"  Configuration: {config_path}")
     print(f"  Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
@@ -346,3 +346,10 @@ if __name__ == "__main__":
     import sys
     config_file = sys.argv[1] if len(sys.argv) > 1 else INFERENCE_CONFIG_PATH
     main(config_file)
+
+
+
+
+
+
+    
