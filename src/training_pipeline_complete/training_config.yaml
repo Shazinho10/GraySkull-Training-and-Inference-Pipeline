@@ -1,0 +1,149 @@
+# Global settings
+global:
+  seed: 42
+  save_checkpoints: true
+
+# Model configurations
+models:
+  qwen:
+    name: "dphn/dolphin-2.9.3-qwen2-0.5b"
+    use_float16: false
+    deterministic: false
+    checkpoint_dir: "checkpoints_qwen"
+    single_checkpoint_dir: "checkpoints_qwen/single"
+    batch_checkpoint_dir: "checkpoints_qwen/batch"
+    final_checkpoint_dir: "checkpoints_qwen/final"
+
+  llama:
+    name: "dphn/dolphin-2.9-llama3-8b"
+    use_float16: true
+    deterministic: false
+    checkpoint_dir: "checkpoints_llama"
+    single_checkpoint_dir: "checkpoints_llama/single"
+    batch_checkpoint_dir: "checkpoints_llama/batch"
+
+# Training hyperparameters
+training:
+  # Basic training settings
+  num_epochs: 3
+  batch_size: 2
+  gradient_accumulation_steps: 2
+  max_seq_length: 512
+  
+  # Optimizer settings
+  learning_rate: 2.0e-5
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  max_grad_norm: 1.0
+  
+  # Scheduler settings
+  scheduler_type: "cosine"  # Options: linear, cosine, constant, constant_with_warmup
+  
+  # LoRA settings for efficient fine-tuning
+  use_lora: true
+  lora:
+    r: 16
+    alpha: 32
+    dropout: 0.05
+    target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+    bias: "none"
+  
+  # Logging and saving
+  logging_steps: 1
+  eval_steps: 5
+  save_steps: 10
+  save_total_limit: 3
+
+# Training data - Small sample for testing pipeline
+training_data:
+  # External HuggingFace dataset configuration
+  use_external_dataset: true  # Set to false to use inline samples below
+  
+  external_dataset:
+    name: "Juliankrg/HTML_CSS_CodeDataSet_100k"
+    split: "train"
+    streaming: true  # Use streaming to avoid downloading full dataset
+    
+    # Column mapping (maps dataset columns to expected format)
+    column_mapping:
+      instruction: "prompt"      # Dataset column for instruction/input
+      response: "example"        # Dataset column for response/output
+    
+    # Sampling configuration
+    test_mode: true              # Set to false for full training
+    test_samples: 10            # Number of samples in test mode
+    max_samples: null            # Set a number to limit samples, null for all (when test_mode is false)
+    val_ratio: 0.1               # Fraction of data for validation
+    
+    # Optional filtering
+    shuffle_seed: 42             # Seed for shuffling before split
+  
+  # Fallback training samples (used when use_external_dataset is false)
+  train_samples:
+    - instruction: "What is artificial intelligence?"
+      response: "Artificial intelligence (AI) refers to computer systems designed to perform tasks that typically require human intelligence. These tasks include learning, reasoning, problem-solving, perception, and language understanding."
+    
+    - instruction: "Explain machine learning in simple terms."
+      response: "Machine learning is a subset of AI where computers learn patterns from data without being explicitly programmed. Instead of writing rules, we show examples and let the algorithm figure out the patterns."
+    
+    - instruction: "What is deep learning?"
+      response: "Deep learning is a type of machine learning that uses neural networks with many layers. These deep networks can automatically learn complex features from raw data, making them powerful for tasks like image recognition and natural language processing."
+    
+    - instruction: "What is Python used for?"
+      response: "Python is a versatile programming language used for web development, data science, machine learning, automation, scientific computing, and more. Its simple syntax and rich ecosystem of libraries make it popular among developers."
+    
+    - instruction: "Explain what a neural network is."
+      response: "A neural network is a computing system inspired by the human brain. It consists of interconnected nodes (neurons) organized in layers that process information by passing signals between them, learning to recognize patterns through training."
+    
+    - instruction: "What is natural language processing?"
+      response: "Natural Language Processing (NLP) is a field of AI that focuses on enabling computers to understand, interpret, and generate human language. Applications include chatbots, translation, sentiment analysis, and text summarization."
+    
+    - instruction: "Define supervised learning."
+      response: "Supervised learning is a type of machine learning where the model learns from labeled training data. Each training example includes an input and the correct output, allowing the model to learn the mapping between them."
+    
+    - instruction: "What is transfer learning?"
+      response: "Transfer learning is a technique where a model trained on one task is reused as the starting point for a different but related task. This approach saves time and computational resources while often improving performance."
+
+  # Validation samples
+  val_samples:
+    - instruction: "What is reinforcement learning?"
+      response: "Reinforcement learning is a type of machine learning where an agent learns to make decisions by taking actions in an environment to maximize cumulative rewards. It learns through trial and error."
+    
+    - instruction: "Explain what overfitting means."
+      response: "Overfitting occurs when a machine learning model learns the training data too well, including noise and outliers. This results in poor generalization to new, unseen data."
+  
+  # Legacy single texts (for backward compatibility)
+  single_texts:
+    - "Explain what artificial intelligence is."
+    - "How does machine learning differ from traditional programming?"
+  
+  batch_texts:
+    - "What is machine learning?"
+    - "Explain neural networks simply."
+    - "What is Python used for?"
+    - "Explain deep learning briefly."
+
+# Metrics configuration
+metrics:
+  output_dir: "training_metrics"
+  save_metrics_every_epoch: true
+  track_metrics:
+    - "train_loss"
+    - "val_loss"
+    - "perplexity"
+    - "learning_rate"
+    - "epoch"
+    - "step"
+    - "gradient_norm"
+  generate_plots: true
+  plot_types:
+    - "loss_curve"
+    - "learning_rate_schedule"
+    - "perplexity_curve"
+
+# Pipeline settings
+pipeline:
+  total_steps: 8
+  reproducibility_tolerance:
+    float32: 1.0e-7
+    float16: 1.0e-5
