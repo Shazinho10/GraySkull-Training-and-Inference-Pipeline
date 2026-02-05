@@ -8,6 +8,8 @@ apt update && apt upgrade -y
 
 echo "=== Installing essential system packages ==="
 apt install -y git build-essential cmake curl wget unzip zip tmux python3-pip python3-venv python3-dev
+apt install -y zstd
+curl -fsSL https://ollama.com/install.sh | sh
 
 echo "=== Upgrading pip ==="
 python3 -m pip install --upgrade pip

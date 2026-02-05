@@ -4,5 +4,6 @@ chmod +x setup.sh
 source .venv/bin/activate
 nvidia-smi
 
+ollama pull qwen3-coder:latest
 
 

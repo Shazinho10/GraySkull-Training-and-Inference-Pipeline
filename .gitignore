@@ -24,3 +24,5 @@ checkpoints_llama/
 .env
 .venv/
 evaluation_results/
+training_metrics/training_metrics.json
+training_metrics/training_plots.png
