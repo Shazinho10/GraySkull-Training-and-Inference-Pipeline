@@ -1,0 +1,29 @@
+# Code Generation Inference Configuration
+
+# Ollama Configuration
+ollama:
+  base_url: "http://localhost:11434"
+  model: "qwen3-coder:latest"
+  timeout: 120
+
+# Generation Parameters
+generation:
+  temperature: 0.7
+  top_p: 0.9
+  max_tokens: 4096
+
+# UI Configuration
+ui:
+  page_title: "Web Code Generator"
+  page_icon: "🖥️"
+  layout: "wide"
+  default_preview_height: 500
+
+# Code Types
+code_types:
+  - "Complete HTML Page"
+  - "HTML Component"
+  - "HTML + CSS"
+  - "HTML + CSS + JS"
+  - "Tailwind CSS"
+  - "Bootstrap"
