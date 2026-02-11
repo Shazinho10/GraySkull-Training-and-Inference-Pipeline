@@ -174,7 +174,7 @@ def main():
     
     # Header
     st.markdown("<h1 class='main-header'>🖥️ Web Code Generator</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align: center; color: #666;'>Generate and preview web code using qwen3-coder</p>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center; color: #666;'>Generate and preview web code</p>", unsafe_allow_html=True)
     
     # Check Ollama status
     with st.sidebar:
@@ -182,7 +182,7 @@ def main():
         
         ollama_status = check_ollama_status()
         if ollama_status:
-            st.success(f"✅ Model: {MODEL_NAME}")
+            st.success(f"✅ Model")
         else:
             st.error(f"❌ Model not available")
             st.info("Make sure Ollama is running and the model is pulled:\n```\nollama pull qwen3-coder:latest\n```")
