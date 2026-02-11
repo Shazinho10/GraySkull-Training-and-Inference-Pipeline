@@ -1,11 +1,12 @@
 """
 RAGAS LLM Evaluation Pipeline
-Evaluates LLM responses using RAGAS framework with Groq API
+Evaluates LLM responses using RAGAS framework with Ollama (local LLM via HTTP)
 """
 
 import os
 import yaml
 import json
+import requests
 import pandas as pd
 from pathlib import Path
 from typing import Dict, List, Optional, Any
@@ -21,12 +22,53 @@ from ragas.metrics import (
     answer_similarity,
     answer_correctness,
 )
-from langchain_groq import ChatGroq
+from langchain_core.language_models.llms import LLM
+from langchain_core.callbacks.manager import CallbackManagerForLLMRun
 from langchain_huggingface import HuggingFaceEmbeddings
 from datasets import Dataset
 
 # Load environment variables
 load_dotenv()
+
+
+# Ollama Configuration
+OLLAMA_URL = "http://localhost:11434/api/generate"
+MODEL_NAME = "qwen3-coder:latest"
+
+
+class OllamaLLM(LLM):
+    """Custom LLM wrapper for Ollama using direct HTTP requests."""
+    
+    model: str = MODEL_NAME
+    base_url: str = OLLAMA_URL
+    temperature: float = 0.2
+    top_p: float = 0.95
+    
+    @property
+    def _llm_type(self) -> str:
+        return "ollama"
+    
+    def _call(
+        self,
+        prompt: str,
+        stop: Optional[List[str]] = None,
+        run_manager: Optional[CallbackManagerForLLMRun] = None,
+        **kwargs: Any,
+    ) -> str:
+        """Make HTTP request to Ollama API."""
+        payload = {
+            "model": self.model,
+            "prompt": prompt,
+            "stream": False,
+            "options": {
+                "temperature": self.temperature,
+                "top_p": self.top_p,
+            },
+        }
+        
+        response = requests.post(self.base_url, json=payload, timeout=600)
+        response.raise_for_status()
+        return response.json()["response"]
 
 
 class RAGASEvaluator:
@@ -53,20 +95,18 @@ class RAGASEvaluator:
             config = yaml.safe_load(f)
         return config
     
-    def _setup_llm(self) -> ChatGroq:
-        """Setup Groq LLM for evaluation."""
-        api_key_env = self.config['model']['api_key_env']
-        api_key = os.getenv(api_key_env)
+    def _setup_llm(self) -> OllamaLLM:
+        """Setup Ollama LLM for evaluation (local model via HTTP)."""
+        model_config = self.config['model']
+        base_url = model_config.get('base_url', OLLAMA_URL)
         
-        if not api_key:
-            raise ValueError(
-                f"API key not found. Please set {api_key_env} in your .env file."
-            )
+        print(f"Connecting to Ollama at {base_url}...")
+        print(f"Using model: {model_config['name']}")
         
-        return ChatGroq(
-            model=self.config['model']['name'],
-            temperature=self.config['model']['temperature'],
-            groq_api_key=api_key,
+        return OllamaLLM(
+            model=model_config['name'],
+            base_url=base_url,
+            temperature=model_config.get('temperature', 0.2),
         )
     
     def _setup_embeddings(self) -> HuggingFaceEmbeddings:

@@ -1,8 +1,8 @@
 # RAGAS LLM Evaluation Pipeline Configuration
 model:
-  name: "llama-3.3-70b-versatile"   # Groq model (llama-3.3-70b-versatile, mixtral-8x7b-32768, gemma2-9b-it)
-  temperature: 0            
-  api_key_env: "GROQ_API_KEY"      
+  name: "qwen3-coder:latest"        # Ollama model name
+  temperature: 0.2            
+  base_url: "http://localhost:11434/api/generate"  # Ollama generate API endpoint
 
 
 embeddings:
@@ -19,7 +19,7 @@ metrics:
 
 # Data Configuration
 data:
-  input_file: "D:/Intellema/UAE-Project/GraySkull-Training-and-Inference-Pipeline/src/llm-eval-ragas/sample_data.json"     
+  input_file: "code_gen_eval_data.json"     
   input_format: "json"              
   batch_size: 10              
   

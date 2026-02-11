@@ -46,6 +46,7 @@ python-dotenv
 ragas
 langchain
 langchain-groq
+langchain-ollama
 langchain-huggingface
 datasets
 sentence-transformers
