@@ -6,4 +6,6 @@ nvidia-smi
 
 ollama pull qwen3-coder:latest
 
+git config user.name "ahmadsaeeduddin"
+git config user.email "ahmadsaeeduddin@gmail.com"
 
