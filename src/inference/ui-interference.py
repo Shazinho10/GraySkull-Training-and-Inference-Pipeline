@@ -41,7 +41,7 @@ with st.sidebar:
     )
 
     st.subheader("Generation Parameters")
-    max_new_tokens = st.slider("Max New Tokens", 16, 512, 100, step=16)
+    max_new_tokens = st.slider("Max New Tokens", 16, 10000, 100, step=16)
     temperature = st.slider("Temperature", 0.1, 2.0, 0.7, step=0.05)
     top_p = st.slider("Top-p", 0.1, 1.0, 0.9, step=0.05)
     do_sample = st.checkbox("Sampling", value=True)
