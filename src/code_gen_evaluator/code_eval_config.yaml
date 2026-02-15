@@ -1,0 +1,81 @@
+# ============================================================
+# Code Generation Evaluation Pipeline Configuration
+# Static Analysis + LLM-as-a-Judge (Ollama)
+# ============================================================
+
+# Ollama Model Configuration
+model:
+  name: "qwen3-coder:latest"
+  base_url: "http://localhost:11434/api/generate"
+  temperature: 0.1
+  top_p: 0.95
+  timeout: 600
+
+# Scoring Weights
+scoring:
+  static_analysis_weight: 0.30
+  llm_judge_weight: 0.70
+
+# Static Analysis Configuration
+static_analysis:
+  html_validation:
+    enabled: true
+    penalty: 3.0           # Deduction for invalid HTML (out of 10)
+  css_validation:
+    enabled: true
+    penalty: 3.0           # Deduction for invalid CSS (out of 10)
+  linting:
+    enabled: true
+    max_penalty: 2.0       # Maximum linting deduction
+    per_issue_penalty: 0.5
+    checks:
+      inline_styles: true
+      missing_alt_attr: true
+      deprecated_tags: true
+      missing_viewport: true
+      excessive_important: true
+      important_threshold: 2
+  security:
+    enabled: true
+    max_penalty: 2.0       # Maximum security deduction
+    per_issue_penalty: 1.0
+    checks:
+      inline_js_handlers: true
+      javascript_urls: true
+      external_script_integrity: true
+      blank_target_noopener: true
+
+# LLM Judge Criteria
+llm_judge:
+  criteria:
+    correctness:
+      description: "Accuracy in implementing the user's requirements"
+      weight: high
+    quality:
+      description: "Code readability, structure, and adherence to best practices"
+      weight: medium
+    completeness:
+      description: "Coverage of all requested features"
+      weight: high
+
+# Data Configuration
+data:
+  input_file: "code_gen_eval_tasks.json"
+  input_format: "json"
+
+# Output Configuration
+output:
+  output_dir: "evaluation_results"
+  save_detailed_results: true
+  export_formats:
+    - json
+    - csv
+    - txt
+  include_statistics:
+    mean: true
+    variance: true
+    std_deviation: true
+    min_max: true
+    median: true
+    score_distribution: true
+    distribution_bins: [0, 2, 4, 6, 8, 10]

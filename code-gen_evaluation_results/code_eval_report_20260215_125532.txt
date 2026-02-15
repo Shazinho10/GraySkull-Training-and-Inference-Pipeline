@@ -1,0 +1,231 @@
+======================================================================
+                  CODE GENERATION EVALUATION REPORT                   
+======================================================================
+Date           : 2026-02-15T12:55:32.975265
+Model          : qwen3-coder:latest
+Total Samples  : 34
+Scoring Weights: Static 30%  | LLM Judge 70%
+
+----------------------------------------------------------------------
+AGGREGATE STATISTICS
+----------------------------------------------------------------------
+Metric                       Mean      Var   StdDev  Median    Min    Max
+-------------------------------------------------------------------------
+Overall Score                9.52   0.5154   0.7179    9.86   7.47   9.86
+Static Analysis Score        9.90   0.2694   0.5190   10.00   7.00  10.00
+Llm Judge Score              9.35   1.0014   1.0007    9.80   6.60   9.80
+Correctness Score            9.47   1.4688   1.2119   10.00   6.00  10.00
+Quality Score                8.76   0.3066   0.5537    9.00   7.00   9.00
+Completeness Score           9.53   1.2264   1.1074   10.00   6.00  10.00
+
+----------------------------------------------------------------------
+SCORE DISTRIBUTION
+----------------------------------------------------------------------
+
+  Overall Score:
+    [  0-2] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  2-4] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  4-6] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  6-8] ███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 3
+    [ 8-10] ███████████████████████████████░░░ 31
+
+  Static Analysis Score:
+    [  0-2] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  2-4] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  4-6] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  6-8] █░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 1
+    [ 8-10] █████████████████████████████████░ 33
+
+  Llm Judge Score:
+    [  0-2] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  2-4] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  4-6] ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 0
+    [  6-8] █████░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ 5
+    [ 8-10] █████████████████████████████░░░░░ 29
+
+----------------------------------------------------------------------
+STATIC ANALYSIS SUMMARY
+----------------------------------------------------------------------
+  HTML Validity       : 34/34 (100.0%)
+  CSS Validity        : 33/34 (97.1%)
+  Total Lint Issues   : 1
+  Total Security Issues: 0
+
+----------------------------------------------------------------------
+PER-SAMPLE RESULTS
+----------------------------------------------------------------------
+
+  Task # 1: Create a responsive navigation bar with a hamburger menu for
+    Overall: 8.32/10  | Static: 10.00  | LLM: 7.60
+    Correctness: 7  | Quality: 8  | Completeness: 8
+    Feedback: The code correctly implements a responsive navbar with hamburger menu functionality, but lacks JavaScript interaction to toggle the menu and
+
+  Task # 2: Build a CSS card component with shadow and hover effect
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements all requested features including shadow effects, hover transitions with transform and box-shadow changes, prop
+
+  Task # 3: Create a flexbox grid layout with 3 columns that is responsi
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code correctly implements a responsive flexbox grid with 3 columns that gracefully degrades to 2 and then 1 column on smaller screens. I
+
+  Task # 4: Design a modern login form with CSS styling
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements a modern login form with all requested features including gradient background, centered layout, styled inputs 
+
+  Task # 5: Create an animated loading spinner using only CSS
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code correctly implements a CSS-only loading spinner using border properties to create the circular shape and CSS keyframes for smooth r
+
+  Task # 6: Build a pricing table with three tiers highlighting the reco
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements the user's requirements with a correctly structured pricing table using flexbox, properly highlights the recom
+
+  Task # 7: Create a pure CSS tooltip that appears on hover with an arro
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements a CSS tooltip with hover functionality and an arrow using the border trick. It correctly uses absolute positio
+
+  Task # 8: Design a website footer with multiple columns and social med
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements all required features including a dark background footer with multiple responsive columns, organized link sect
+
+  Task # 9: Create a hero section with background image overlay, heading
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements the required hero section with background image, dark overlay, centered content, and CTA button. All requested
+
+  Task #10: Build an accordion/FAQ component using only HTML and CSS
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code correctly implements a CSS-only accordion using the checkbox hack with proper max-height transitions and visual indicators. Structu
+
+  Task #11: Create a CSS progress bar with animated fill effect
+    Overall: 7.47/10  | Static: 9.50  | LLM: 6.60
+    Correctness: 6  | Quality: 7  | Completeness: 7
+    Lint: Inline styles found (2 occurrence(s)) — prefer CSS classes
+    Feedback: The code implements a progress bar with gradient fill and percentage labels, but contains a critical bug in the CSS animation where the 'fil
+
+  Task #12: Design a testimonial carousel/slider layout using CSS
+    Overall: 9.02/10  | Static: 10.00  | LLM: 8.60
+    Correctness: 8  | Quality: 9  | Completeness: 9
+    Feedback: The code correctly implements a horizontal scrollable testimonial slider with scroll-snap functionality and card-based design. It effectivel
+
+  Task #13: Create a sticky header that shrinks on scroll using CSS
+    Overall: 7.76/10  | Static: 10.00  | LLM: 6.80
+    Correctness: 7  | Quality: 8  | Completeness: 6
+    Feedback: The code correctly implements a sticky header with position: sticky and z-index, but lacks the actual shrinking behavior on scroll as requir
+
+  Task #14: Build a CSS-only toggle switch (on/off)
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code correctly implements a functional CSS-only toggle switch with proper accessibility features, smooth transitions, and focus handling
+
+  Task #15: Create a responsive image gallery with CSS grid and hover ov
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements a responsive image gallery with CSS grid, hover effects, and overlay functionality. All requested features are
+
+  Task #16: Design a notification/alert banner with different severity l
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements all required alert severity levels with distinct visual styles, icons, and functionality. Structure is clean a
+
+  Task #17: Create a badge/tag component system with multiple styles
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code accurately implements all requested badge variants (solid, outline, soft) with proper semantic colors and consistent styling. Struc
+
+  Task #18: Build a breadcrumb navigation component
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code correctly implements semantic HTML with an ordered list, uses proper separators, links for navigable items, and plain text for the 
+
+  Task #19: Create a CSS animated gradient background
+    Overall: 9.72/10  | Static: 10.00  | LLM: 9.60
+    Correctness: 10  | Quality: 8  | Completeness: 10
+    Feedback: The code perfectly implements the animated gradient background with correct use of multi-color linear-gradient, oversized background-size, a
+
+  Task #20: Design a modal/dialog popup with overlay using HTML and CSS
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements a modal dialog with overlay, featuring proper ARIA attributes, responsive design, and interactive elements. Al
+
+  Task #21: Create a responsive table layout that works on mobile
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements a responsive table with proper mobile handling using horizontal scrolling on desktop and stacked rows with dat
+
+  Task #22: Build a sidebar navigation with active state and sub-items
+    Overall: 8.46/10  | Static: 10.00  | LLM: 7.80
+    Correctness: 8  | Quality: 9  | Completeness: 7
+    Feedback: Code correctly implements dark sidebar with active states and sub-items, but lacks collapsible functionality and proper semantic structure. 
+
+  Task #23: Create a CSS-only star rating display
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code correctly implements a star rating display with filled stars, half-star support using background-clip gradients, and includes the n
+
+  Task #24: Design a timeline component for displaying events chronologi
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code accurately implements a vertical timeline with pseudo-elements for the line and markers, correctly structures date labels and conte
+
+  Task #25: Create a form with floating labels that animate on focus
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements floating labels with proper CSS transitions using :focus and :not(:placeholder-shown) selectors. All requested
+
+  Task #26: Build a CSS grid dashboard layout with header, sidebar, and 
+    Overall: 8.96/10  | Static: 7.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements the requested CSS grid dashboard with proper template areas for header, sidebar, and main content. It correctl
+
+  Task #27: Create a CSS animated counter/number stat section
+    Overall: 9.72/10  | Static: 10.00  | LLM: 9.60
+    Correctness: 10  | Quality: 8  | Completeness: 10
+    Feedback: The code correctly implements all required features including the gradient background, animated counters with staggered delays, and responsi
+
+  Task #28: Design a tab component that switches content panels
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code correctly implements a CSS-only tab component using radio buttons and the sibling selector as required. It properly handles tab swi
+
+  Task #29: Build a responsive card grid with image, title, description,
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements all required features including responsive grid layout, card structure with image, title, description, and but
+
+  Task #30: Create a dropdown menu with CSS hover reveal
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements a hover-reveal dropdown menu with nested lists, absolute positioning, smooth transitions, and proper styling. 
+
+  Task #31: Design a contact form with validation styling (valid/invalid
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements HTML5 validation with correct use of :valid and :invalid pseudo-classes, proper form fields, and visual feedba
+
+  Task #32: Build a CSS-only hamburger menu animation (three lines to X)
+    Overall: 7.62/10  | Static: 10.00  | LLM: 6.60
+    Correctness: 6  | Quality: 7  | Completeness: 7
+    Feedback: The code implements the basic hamburger to X animation with CSS transforms and transitions. However, it has a critical error in the HTML str
+
+  Task #33: Create a CSS glassmorphism card with frosted glass effect
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements glassmorphism with correct backdrop-filter blur, semi-transparent backgrounds, and proper border effects. Stru
+
+  Task #34: Design a cookie consent banner fixed to the bottom of the pa
+    Overall: 9.86/10  | Static: 10.00  | LLM: 9.80
+    Correctness: 10  | Quality: 9  | Completeness: 10
+    Feedback: The code perfectly implements a fixed cookie banner at the bottom of the page with proper styling, accessibility attributes, and responsive 
+
+======================================================================
+                            END OF REPORT                             
+======================================================================

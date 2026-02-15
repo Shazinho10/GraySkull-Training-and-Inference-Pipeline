@@ -1,0 +1,814 @@
+{
+  "evaluation_meta": {
+    "date": "2026-02-15T12:55:32.975265",
+    "model": "qwen3-coder:latest",
+    "scoring_weights": {
+      "static_analysis": 0.3,
+      "llm_judge": 0.7
+    },
+    "total_samples": 34
+  },
+  "statistics": {
+    "overall_score": {
+      "n": 34,
+      "mean": 9.5162,
+      "variance": 0.5154,
+      "std_deviation": 0.7179,
+      "median": 9.86,
+      "min": 7.47,
+      "max": 9.86
+    },
+    "static_analysis_score": {
+      "n": 34,
+      "mean": 9.8971,
+      "variance": 0.2694,
+      "std_deviation": 0.519,
+      "median": 10.0,
+      "min": 7.0,
+      "max": 10.0
+    },
+    "llm_judge_score": {
+      "n": 34,
+      "mean": 9.3529,
+      "variance": 1.0014,
+      "std_deviation": 1.0007,
+      "median": 9.8,
+      "min": 6.6,
+      "max": 9.8
+    },
+    "correctness_score": {
+      "n": 34,
+      "mean": 9.4706,
+      "variance": 1.4688,
+      "std_deviation": 1.2119,
+      "median": 10.0,
+      "min": 6.0,
+      "max": 10.0
+    },
+    "quality_score": {
+      "n": 34,
+      "mean": 8.7647,
+      "variance": 0.3066,
+      "std_deviation": 0.5537,
+      "median": 9.0,
+      "min": 7.0,
+      "max": 9.0
+    },
+    "completeness_score": {
+      "n": 34,
+      "mean": 9.5294,
+      "variance": 1.2264,
+      "std_deviation": 1.1074,
+      "median": 10.0,
+      "min": 6.0,
+      "max": 10.0
+    }
+  },
+  "score_distribution": {
+    "overall_score": {
+      "0-2": 0,
+      "2-4": 0,
+      "4-6": 0,
+      "6-8": 3,
+      "8-10": 31
+    },
+    "static_analysis_score": {
+      "0-2": 0,
+      "2-4": 0,
+      "4-6": 0,
+      "6-8": 1,
+      "8-10": 33
+    },
+    "llm_judge_score": {
+      "0-2": 0,
+      "2-4": 0,
+      "4-6": 0,
+      "6-8": 5,
+      "8-10": 29
+    }
+  },
+  "static_analysis_summary": {
+    "html_validity_rate": "34/34 (100.0%)",
+    "css_validity_rate": "33/34 (97.1%)",
+    "total_linting_issues": 1,
+    "total_security_issues": 0
+  },
+  "per_sample_results": [
+    {
+      "task_id": 1,
+      "prompt": "Create a responsive navigation bar with a hamburger menu for mobile",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { margin: 0; padding: 0; box-sizing: border-box; }\n.navbar { display: flex; justify-content: space-between; align-items: center; background: #1a1a2e; padding: 1rem 2rem; }\n.logo { color: #e94560; font-size: 1.5rem; font-weight: bold; }\n.nav-links { display: flex; gap: 25px; list-style: none; }\n.nav-links a { color: #eee; text-decoration: none; font-size: 1rem; transition: color 0.3s; }\n.nav-links a:hover { color: #e94560; }\n.hamburger { display: none; …",
+      "ground_truth": "A responsive navbar should use flexbox for layout, media queries for mobile responsiveness, include a hamburger icon that appears on smaller screens while hiding the regular navigation links, and have proper color contrast and hover states.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 7.0,
+        "quality_score": 8.0,
+        "completeness_score": 8.0,
+        "feedback": "The code correctly implements a responsive navbar with hamburger menu functionality, but lacks JavaScript interaction to toggle the menu and has a minor CSS issue where the hamburger menu doesn't properly toggle the nav links. The structure and styling are clean and follow best practices, though a few enhancements would improve robustness.",
+        "score": 7.6
+      },
+      "overall_score": 8.32
+    },
+    {
+      "task_id": 2,
+      "prompt": "Build a CSS card component with shadow and hover effect",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\nbody { font-family: 'Segoe UI', sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f0f2f5; }\n.card {\n  width: 320px;\n  padding: 24px;\n  border-radius: 12px;\n  background: white;\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 1px 3px rgba(0,0,0,0.06);\n  transition: transform 0.3s ease, box-shadow 0.3s ease;\n}\n.card:hover {\n  transform: translateY(-6px);\n  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);\n}\n…",
+      "ground_truth": "A well-designed card component should include border-radius for rounded corners, box-shadow for depth, smooth transitions for hover effects including transform and shadow changes, and proper padding and typography.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements all requested features including shadow effects, hover transitions with transform and box-shadow changes, proper padding, and typography. The structure is clean and follows best practices with appropriate use of CSS transitions and modern styling techniques. All required elements are present and functioning as expected.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 3,
+      "prompt": "Create a flexbox grid layout with 3 columns that is responsive",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\n.container {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 20px;\n  padding: 20px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\n.item {\n  flex: 1 1 calc(33.333% - 14px);\n  min-width: 280px;\n  padding: 24px;\n  background: #f8f9fa;\n  border-radius: 8px;\n  text-align: center;\n  border: 1px solid #e9ecef;\n}\n.item h3 { margin-bottom: 8px; color: #333; }\n.item p { color: #666; }\n@media (max-width: 900px) { .item { f…",
+      "ground_truth": "A flexbox grid layout should use display: flex with flex-wrap: wrap, calc() for column widths accounting for gaps, and media queries for responsive behavior on smaller screens (3 → 2 → 1 column).",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements a responsive flexbox grid with 3 columns that gracefully degrades to 2 and then 1 column on smaller screens. It properly uses calc() to account for gaps, includes appropriate media queries, and follows best practices for responsive design. The structure is clean and the implementation is complete and accurate.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 4,
+      "prompt": "Design a modern login form with CSS styling",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: linear-gradient(135deg, #667eea, #764ba2); min-height: 100vh; display: flex; align-items: center; justify-content: center; }\n.login-form {\n  max-width: 400px; width: 90%; padding: 40px;\n  background: white; border-radius: 16px;\n  box-shadow: 0 20px 60px rgba(0,0,0,0.15);\n}\n.login-form h2 { text-align: center; color: #333; margin-bottom: 30px; font…",
+      "ground_truth": "A modern login form should have centered layout with gradient background, proper spacing, styled inputs with focus states and transitions, a prominent submit button with hover effects, and clean typography.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements a modern login form with all requested features including gradient background, centered layout, styled inputs with focus states, smooth transitions, and proper typography. The structure is clean and follows best practices with appropriate use of CSS selectors and properties. All elements are present and functioning as expected.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 5,
+      "prompt": "Create an animated loading spinner using only CSS",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\nbody { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f5f5f5; margin: 0; }\n.spinner {\n  width: 48px; height: 48px;\n  border: 5px solid #e0e0e0;\n  border-top-color: #3498db;\n  border-radius: 50%;\n  animation: spin 0.8s linear infinite;\n}\n@keyframes spin {\n  to { transform: rotate(360deg); }\n}\n</style>\n</head>\n<body>\n<div class=\"spinner\"></div>\n</body>\n</html>",
+      "ground_truth": "A CSS loading spinner should use border properties to create a partial circle, CSS keyframe animations for rotation, and be centered on the page. Only CSS should be used, no JavaScript.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements a CSS-only loading spinner using border properties to create the circular shape and CSS keyframes for smooth rotation. It properly centers the spinner on the page and meets all requirements including no JavaScript usage. The implementation is clean, well-structured, and follows best practices with appropriate use of flexbox for centering and semantic HTML structure.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 6,
+      "prompt": "Build a pricing table with three tiers highlighting the recommended plan",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 40px 20px; }\n.pricing { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; }\n.plan {\n  width: 300px; padding: 32px; background: white; border-radius: 16px;\n  box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s;\n}\n.plan.featured { border: 3px solid #667eea; transform: scale(1.05…",
+      "ground_truth": "A pricing table should display multiple tiers side by side using flexbox, highlight the recommended plan with visual emphasis (border, scale, badge), list features clearly, and include prominent call-to-action buttons.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements the user's requirements with a correctly structured pricing table using flexbox, properly highlights the recommended plan with a border, scaling effect, and badge, and includes all requested features such as tiers, features, and call-to-action buttons. The implementation is clean, well-organized, and follows best practices with appropriate use of CSS selectors, transitions, and semantic HTML structure.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 7,
+      "prompt": "Create a pure CSS tooltip that appears on hover with an arrow",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\nbody { display: flex; justify-content: center; align-items: center; min-height: 100vh; font-family: sans-serif; }\n.tooltip-wrap { position: relative; display: inline-block; }\n.tooltip-wrap .tip {\n  visibility: hidden; opacity: 0;\n  position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%);\n  background: #333; color: #fff; padding: 8px 14px; border-radius: 6px;\n  white-space: nowrap; font-size: 14px; transition: opacity 0.25s;\n…",
+      "ground_truth": "A CSS tooltip should use absolute positioning relative to a container, appear on hover using visibility and opacity transitions, and include an arrow using CSS pseudo-elements (::after border trick).",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements a CSS tooltip with hover functionality and an arrow using the border trick. It correctly uses absolute positioning, transitions, and pseudo-elements. The implementation is clean, well-structured, and includes all requested features without any gaps or errors.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 8,
+      "prompt": "Design a website footer with multiple columns and social media links",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\n.footer { background: #1a1a2e; color: #ccc; padding: 48px 24px 24px; }\n.footer-grid { display: flex; flex-wrap: wrap; gap: 32px; max-width: 1100px; margin: 0 auto; justify-content: space-between; }\n.footer-col { flex: 1; min-width: 180px; }\n.footer-col h4 { color: #fff; margin-bottom: 16px; font-size: 1.1rem; }\n.footer-col ul { list-style: none; padding: 0; }\n.footer-col li { margin-bottom: 10px; }\n.fo…",
+      "ground_truth": "A website footer should have a dark background, multiple columns using flexbox with responsive wrap, organized link sections, social media icons with hover effects, and a copyright bar at the bottom.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements all required features including a dark background footer with multiple responsive columns, organized link sections, social media icons with hover effects, and a copyright bar. The structure is clean and follows best practices with proper use of flexbox, semantic HTML, and CSS transitions. All requested elements are present and functioning as expected.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 9,
+      "prompt": "Create a hero section with background image overlay, heading, and CTA button",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { margin: 0; padding: 0; box-sizing: border-box; }\n.hero {\n  position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;\n  background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600') center/cover no-repeat;\n  color: white; text-align: center;\n}\n.hero::before {\n  content: ''; position: absolute; inset: 0;\n  background: rgba(0,0,0,0.55);\n}\n.hero-content { position: relative; z-index: 1; m…",
+      "ground_truth": "A hero section should have a full-height background image with a dark overlay using ::before pseudo-element, centered content with large heading and descriptive text, and a prominent CTA button with hover effects.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements the required hero section with background image, dark overlay, centered content, and CTA button. All requested features are present and functioning correctly. The CSS is well-structured with proper use of flexbox and pseudo-elements, though could benefit from minor semantic improvements in HTML structure.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 10,
+      "prompt": "Build an accordion/FAQ component using only HTML and CSS",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 40px 20px; }\n.faq { max-width: 650px; margin: 0 auto; }\n.faq h2 { text-align: center; margin-bottom: 24px; color: #333; }\n.faq-item { margin-bottom: 8px; border-radius: 8px; overflow: hidden; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }\n.faq-item input[type=\"checkbox\"] { display: none; }\n.faq-item label {\n  displa…",
+      "ground_truth": "A CSS-only accordion should use the checkbox hack (hidden input + label) to toggle visibility, max-height transition for smooth animation, and clear visual indicators (+/−) for open/closed state.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements a CSS-only accordion using the checkbox hack with proper max-height transitions and visual indicators. Structure is clean and follows best practices with semantic HTML and organized CSS. All requested features are fully implemented including smooth animations, proper accessibility via labels, and complete FAQ functionality.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 11,
+      "prompt": "Create a CSS progress bar with animated fill effect",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\nbody { font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 24px; background: #f5f5f5; }\n.progress-bar {\n  width: 400px; height: 24px; background: #e0e0e0; border-radius: 12px; overflow: hidden; position: relative;\n}\n.progress-fill {\n  height: 100%; border-radius: 12px;\n  background: linear-gradient(90deg, #667eea, #764ba2);\n  animation: fillUp 2s ease-out forwar…",
+      "ground_truth": "A progress bar should have a track (background) and a fill element with gradient, border-radius, a percentage label, and a keyframe animation for the fill-in effect.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [
+          "Inline styles found (2 occurrence(s)) — prefer CSS classes"
+        ],
+        "security_issues": [],
+        "score": 9.5
+      },
+      "llm_judge": {
+        "correctness_score": 6.0,
+        "quality_score": 7.0,
+        "completeness_score": 7.0,
+        "feedback": "The code implements a progress bar with gradient fill and percentage labels, but contains a critical bug in the CSS animation where the 'fillUp' keyframe is defined incorrectly and doesn't animate the width as intended. The structure is readable and follows some best practices, but the animation logic is flawed. The implementation covers core features but has significant correctness issues.",
+        "score": 6.6
+      },
+      "overall_score": 7.47
+    },
+    {
+      "task_id": 12,
+      "prompt": "Design a testimonial carousel/slider layout using CSS",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 60px 20px; }\n.testimonials { max-width: 800px; margin: 0 auto; text-align: center; }\n.testimonials h2 { margin-bottom: 32px; color: #333; }\n.slider { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; -webkit-overflow-scrolling: touch; }\n.slider::-webkit-scrollbar { height: 6px; }\n.sl…",
+      "ground_truth": "A testimonial slider should use horizontal scroll with scroll-snap for card-based navigation, styled cards with quote text and author info, and smooth scrolling behavior.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 8.0,
+        "quality_score": 9.0,
+        "completeness_score": 9.0,
+        "feedback": "The code correctly implements a horizontal scrollable testimonial slider with scroll-snap functionality and card-based design. It effectively uses flexbox and scroll-snap properties to achieve the desired behavior. The structure is clean and follows best practices with proper semantic HTML and CSS organization. Minor improvements could include adding aria attributes for accessibility and ensuring consistent spacing across all slides.",
+        "score": 8.6
+      },
+      "overall_score": 9.02
+    },
+    {
+      "task_id": 13,
+      "prompt": "Create a sticky header that shrinks on scroll using CSS",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { margin: 0; padding: 0; box-sizing: border-box; }\n.header {\n  position: sticky; top: 0; z-index: 100;\n  display: flex; justify-content: space-between; align-items: center;\n  padding: 20px 32px; background: white;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.08);\n  transition: padding 0.3s;\n}\n.header .logo { font-size: 1.5rem; font-weight: 700; color: #1a1a2e; }\n.header nav a { margin-left: 24px; text-decoration: none; color: #555; font-weight: 500; }\n.header …",
+      "ground_truth": "A sticky header should use position: sticky with top: 0, high z-index, box-shadow for visual separation, and transition properties for smooth shrinking behavior.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 7.0,
+        "quality_score": 8.0,
+        "completeness_score": 6.0,
+        "feedback": "The code correctly implements a sticky header with position: sticky and z-index, but lacks the actual shrinking behavior on scroll as required. The CSS transition is present but not functional without JavaScript. Structure and readability are good, but the core functionality is incomplete.",
+        "score": 6.8
+      },
+      "overall_score": 7.76
+    },
+    {
+      "task_id": 14,
+      "prompt": "Build a CSS-only toggle switch (on/off)",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\nbody { display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: sans-serif; gap: 16px; background: #f5f5f5; }\n.switch { position: relative; display: inline-block; width: 52px; height: 28px; }\n.switch input { opacity: 0; width: 0; height: 0; }\n.slider {\n  position: absolute; inset: 0; background: #ccc; border-radius: 28px;\n  cursor: pointer; transition: background 0.3s;\n}\n.slider::before {\n  content: ''; position: absol…",
+      "ground_truth": "A CSS toggle switch should use a hidden checkbox with a styled label/span, a sliding circle using ::before pseudo-element and transform, smooth transitions, and focus styles for accessibility.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements a functional CSS-only toggle switch with proper accessibility features, smooth transitions, and focus handling. Structure is clean and follows best practices with well-organized CSS. All requested features are fully implemented including the hidden checkbox, slider animation, and label association.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 15,
+      "prompt": "Create a responsive image gallery with CSS grid and hover overlay",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: sans-serif; background: #111; padding: 20px; }\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\n  gap: 16px; max-width: 1200px; margin: 0 auto;\n}\n.gallery-item { position: relative; overflow: hidden; border-radius: 8px; aspect-ratio: 4/3; }\n.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s; display…",
+      "ground_truth": "An image gallery should use CSS grid with auto-fill and minmax for responsive columns, consistent aspect ratios, hover effects with image zoom and overlay with text, and border-radius for aesthetics.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements a responsive image gallery with CSS grid, hover effects, and overlay functionality. All requested features are present and working correctly. The structure is clean and follows best practices with proper use of modern CSS techniques.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 16,
+      "prompt": "Design a notification/alert banner with different severity levels (success, warning, error, info)",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; padding: 40px 20px; background: #f4f6f9; }\n.alerts { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }\n.alert {\n  padding: 14px 20px; border-radius: 8px; border-left: 5px solid;\n  display: flex; align-items: center; gap: 12px; font-size: 15px;\n}\n.alert .icon { font-size: 1.3rem; flex-shrink: 0; }\n.alert-success { background…",
+      "ground_truth": "Alert banners should have distinct visual styles for each severity (success=green, warning=yellow, error=red, info=blue), left border accent, icon, message text, close button, and proper spacing.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements all required alert severity levels with distinct visual styles, icons, and functionality. Structure is clean and follows best practices with proper CSS organization and semantic HTML. All requested features are fully implemented including close buttons and appropriate spacing.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 17,
+      "prompt": "Create a badge/tag component system with multiple styles",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; padding: 40px; background: #f4f6f9; display: flex; flex-direction: column; align-items: center; gap: 24px; }\nh3 { color: #333; margin-bottom: 8px; }\n.badge-group { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }\n.badge {\n  display: inline-block; padding: 4px 12px; border-radius: 20px;\n  font-size: 13px; font-weight: 600; letter-spacing: 0…",
+      "ground_truth": "A badge system should offer multiple variants (solid, outline, soft/light), semantic colors (primary, success, danger, warning), consistent sizing with pill shape (border-radius), and proper font styling.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code accurately implements all requested badge variants (solid, outline, soft) with proper semantic colors and consistent styling. Structure is clean and follows best practices with well-organized CSS and semantic HTML. All required features are fully implemented without any gaps or missing elements.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 18,
+      "prompt": "Build a breadcrumb navigation component",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; padding: 40px; background: #f4f6f9; }\n.breadcrumb {\n  display: flex; align-items: center; flex-wrap: wrap; gap: 8px;\n  padding: 12px 20px; background: white; border-radius: 8px;\n  box-shadow: 0 1px 3px rgba(0,0,0,0.08); max-width: 600px;\n}\n.breadcrumb li { list-style: none; display: flex; align-items: center; gap: 8px; }\n.breadcrumb li + li::before { content:…",
+      "ground_truth": "A breadcrumb should use an ordered list for semantics, separator characters between items, links for navigable items, plain text for the current page, and aria-label on the nav element for accessibility.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements semantic HTML with an ordered list, uses proper separators, links for navigable items, and plain text for the current page. The accessibility features including aria-label are properly implemented. Code structure is clean and follows best practices with consistent styling and proper use of CSS selectors.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 19,
+      "prompt": "Create a CSS animated gradient background",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { margin: 0; padding: 0; }\nbody {\n  min-height: 100vh; display: flex; align-items: center; justify-content: center;\n  font-family: 'Segoe UI', sans-serif;\n  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);\n  background-size: 400% 400%;\n  animation: gradientShift 12s ease infinite;\n}\n@keyframes gradientShift {\n  0%   { background-position: 0% 50%; }\n  50%  { background-position: 100% 50%; }\n  100% { background-position: 0% 50%; }…",
+      "ground_truth": "An animated gradient background should use a multi-color linear-gradient with an oversized background-size (e.g. 400%), and a CSS keyframe animation that shifts the background-position to create a seamless flowing effect.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 8.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements the animated gradient background with correct use of multi-color linear-gradient, oversized background-size, and keyframe animation. The animation creates a seamless flowing effect as required. Structure is clean with proper CSS organization, though could benefit from more descriptive class names or comments. All requested features are fully implemented without any gaps.",
+        "score": 9.6
+      },
+      "overall_score": 9.72
+    },
+    {
+      "task_id": 20,
+      "prompt": "Design a modal/dialog popup with overlay using HTML and CSS",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; min-height: 100vh; display: flex; align-items: center; justify-content: center; background: #f4f6f9; }\n.modal-trigger { padding: 14px 28px; background: #667eea; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }\n.modal-overlay {\n  position: fixed; inset: 0; background: rgba(0,0,0,0.5);\n  display: flex; align-items: center; jus…",
+      "ground_truth": "A modal should have a semi-transparent overlay covering the viewport, a centered dialog box with rounded corners and shadow, a close button, heading, content area, action buttons, and proper ARIA roles.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements a modal dialog with overlay, featuring proper ARIA attributes, responsive design, and interactive elements. All required components are present and correctly structured. The CSS is well-organized with good use of modern properties and best practices.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 21,
+      "prompt": "Create a responsive table layout that works on mobile",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; padding: 40px 20px; background: #f4f6f9; }\n.table-container { max-width: 800px; margin: 0 auto; overflow-x: auto; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }\ntable { width: 100%; border-collapse: collapse; }\nth, td { padding: 14px 16px; text-align: left; border-bottom: 1px solid #eee; }\nth { background: #667eea; color: wh…",
+      "ground_truth": "A responsive table should have proper styling (borders, hover states, status badges), and on mobile should either use horizontal scroll (overflow-x) or stack rows using CSS with data-label attributes displayed via ::before.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements a responsive table with proper mobile handling using horizontal scrolling on desktop and stacked rows with data-labels on mobile. All requested features are present including hover effects, status badges, and clean styling. The implementation follows best practices with semantic HTML, proper CSS structure, and responsive design techniques.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 22,
+      "prompt": "Build a sidebar navigation with active state and sub-items",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; display: flex; min-height: 100vh; }\n.sidebar {\n  width: 260px; background: #1a1a2e; color: #ccc; padding: 24px 0;\n  display: flex; flex-direction: column;\n}\n.sidebar h2 { padding: 0 20px 20px; color: white; font-size: 1.2rem; border-bottom: 1px solid #2a2a4a; margin-bottom: 12px; }\n.nav-item { display: block; }\n.nav-item a {\n  display: flex; align-items: cent…",
+      "ground_truth": "A sidebar navigation should have fixed width, dark background, navigation links with hover and active states (highlighted with accent color/border), collapsible sub-items with indentation, and flex layout with main content area.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 8.0,
+        "quality_score": 9.0,
+        "completeness_score": 7.0,
+        "feedback": "Code correctly implements dark sidebar with active states and sub-items, but lacks collapsible functionality and proper semantic structure. CSS is well-organized with good use of flexbox, though sub-items are always visible rather than toggleable. Missing interactive behavior for sub-menu expansion.",
+        "score": 7.8
+      },
+      "overall_score": 8.46
+    },
+    {
+      "task_id": 23,
+      "prompt": "Create a CSS-only star rating display",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\nbody { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; gap: 24px; background: #f5f5f5; }\n.rating { display: flex; gap: 4px; }\n.star { font-size: 2rem; color: #ddd; }\n.star.filled { color: #f5a623; }\n.star.half { background: linear-gradient(90deg, #f5a623 50%, #ddd 50%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }\n.review { text-align: center; }\n.re…",
+      "ground_truth": "A star rating display should use filled/empty star characters with color styling, support half-star display using gradient background-clip, and show the numeric score and review count below.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements a star rating display with filled stars, half-star support using background-clip gradients, and includes the numeric score and review count as requested. Structure is clean and follows best practices with semantic HTML and efficient CSS. All required features are fully implemented without any gaps.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 24,
+      "prompt": "Design a timeline component for displaying events chronologically",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 40px 20px; }\n.timeline { position: relative; max-width: 600px; margin: 0 auto; padding-left: 40px; }\n.timeline::before { content: ''; position: absolute; left: 15px; top: 0; bottom: 0; width: 3px; background: #667eea; border-radius: 2px; }\n.timeline-item { position: relative; margin-bottom: 32px; }\n.timeline-item::before {\n  cont…",
+      "ground_truth": "A timeline should have a vertical line on the left using ::before pseudo-element, circular markers for each event, date labels, content cards with proper spacing, and a clean visual hierarchy.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code accurately implements a vertical timeline with pseudo-elements for the line and markers, correctly structures date labels and content cards, and follows best practices for CSS organization. All requested features are fully implemented with proper spacing, visual hierarchy, and responsive design considerations.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 25,
+      "prompt": "Create a form with floating labels that animate on focus",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; display: flex; align-items: center; justify-content: center; min-height: 100vh; }\n.form { max-width: 420px; width: 90%; padding: 36px; background: white; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); }\n.form h2 { margin-bottom: 28px; color: #333; text-align: center; }\n.float-group { position: relative; margin-bottom: 24px;…",
+      "ground_truth": "Floating label forms should have labels that sit inside the input and animate upward on focus using CSS transitions with :focus and :not(:placeholder-shown) selectors, clean styling, and proper focus border color.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements floating labels with proper CSS transitions using :focus and :not(:placeholder-shown) selectors. All requested features are present with clean, well-structured code that follows best practices for form design and accessibility.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 26,
+      "prompt": "Build a CSS grid dashboard layout with header, sidebar, and content areas",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; }\n.dashboard {\n  display: grid;\n  grid-template-columns: 240px 1fr;\n  grid-template-rows: 64px 1fr;\n  grid-template-areas:\n    \"sidebar header\"\n    \"sidebar main\";\n  min-height: 100vh;\n}\n.header {\n  grid-area: header; background: white; display: flex; align-items: center;\n  justify-content: space-between; padding: 0 24px;\n  box-shadow: 0 1px 4px rgba(0,0,0,0.…",
+      "ground_truth": "A dashboard layout should use CSS Grid with named template areas for header, sidebar, and main content. Include stat cards in a responsive grid, proper spacing, and media queries to hide sidebar on mobile.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": false,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 7.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements the requested CSS grid dashboard with proper template areas for header, sidebar, and main content. It correctly uses grid-template-areas, includes responsive behavior with media queries, and properly structures the layout. The quality is high with clean, readable code and appropriate use of CSS best practices.",
+        "score": 9.8
+      },
+      "overall_score": 8.96
+    },
+    {
+      "task_id": 27,
+      "prompt": "Create a CSS animated counter/number stat section",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; }\n.stats-section {\n  background: linear-gradient(135deg, #667eea, #764ba2); padding: 60px 20px;\n  display: flex; justify-content: center; flex-wrap: wrap; gap: 40px;\n}\n.stat {\n  text-align: center; color: white; min-width: 150px;\n}\n.stat .number {\n  font-size: 3rem; font-weight: 800;\n  animation: fadeInUp 0.8s ease-out both;\n}\n.stat .label { font-size: 1rem; …",
+      "ground_truth": "A stat counter section should have a visually engaging background (gradient), large bold numbers, descriptive labels, staggered fade-in animations using keyframes with animation-delay, and flexbox for horizontal layout.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 8.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements all required features including the gradient background, animated counters with staggered delays, and responsive flexbox layout. The animations are properly defined using keyframes and applied with appropriate delays. Code structure is clean and follows best practices with proper use of CSS selectors and modern layout techniques.",
+        "score": 9.6
+      },
+      "overall_score": 9.72
+    },
+    {
+      "task_id": 28,
+      "prompt": "Design a tab component that switches content panels",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 40px 20px; }\n.tabs-container { max-width: 600px; margin: 0 auto; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); overflow: hidden; }\n.tabs-nav { display: flex; border-bottom: 2px solid #eee; }\n.tabs-container input[type=\"radio\"] { display: none; }\n.tabs-nav label {\n  flex: 1; padding: 14px; text-al…",
+      "ground_truth": "A CSS-only tab component should use hidden radio inputs with the sibling selector to toggle panel visibility, styled tab labels with active indicator (border-bottom), and separate content panels for each tab.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code correctly implements a CSS-only tab component using radio buttons and the sibling selector as required. It properly handles tab switching, active state styling, and content visibility. The implementation is complete with all requested features and follows good practices for structure and readability.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 29,
+      "prompt": "Build a responsive card grid with image, title, description, and button",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding: 40px 20px; }\n.card-grid {\n  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));\n  gap: 24px; max-width: 1200px; margin: 0 auto;\n}\n.card {\n  background: white; border-radius: 12px; overflow: hidden;\n  box-shadow: 0 2px 8px rgba(0,0,0,0.06); transition: transform 0.3s, box-shadow 0.3s;\n}\n.card:hover { trans…",
+      "ground_truth": "A card grid should use CSS grid with auto-fill and minmax for responsiveness, cards with image, text body, and CTA button, hover effects with shadow and transform, and proper image handling with object-fit.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements all required features including responsive grid layout, card structure with image, title, description, and button. The CSS uses modern techniques like CSS Grid with auto-fill and minmax, object-fit for images, and proper hover effects. All requested elements are present and functioning correctly.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 30,
+      "prompt": "Create a dropdown menu with CSS hover reveal",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; padding-top: 100px; }\n.nav { display: flex; justify-content: center; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.06); }\n.nav > li { list-style: none; position: relative; }\n.nav > li > a {\n  display: block; padding: 16px 24px; color: #333; text-decoration: none;\n  font-weight: 500; transition: color 0.2s;\n}\n.nav > li:hover > a { …",
+      "ground_truth": "A dropdown menu should use nested lists, absolute positioning for the dropdown panel, opacity/visibility transitions for smooth reveal on hover, box-shadow, and proper z-indexing.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements a hover-reveal dropdown menu with nested lists, absolute positioning, smooth transitions, and proper styling. All requested features are present and functioning correctly. The structure is clean and follows best practices with appropriate use of CSS transitions and hover effects.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 31,
+      "prompt": "Design a contact form with validation styling (valid/invalid states)",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; background: #f4f6f9; display: flex; min-height: 100vh; align-items: center; justify-content: center; }\n.contact-form {\n  max-width: 480px; width: 90%; background: white; padding: 36px;\n  border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.08);\n}\n.contact-form h2 { margin-bottom: 24px; color: #333; text-align: center; }\n.field { margin-bottom: 20px; }\n.fi…",
+      "ground_truth": "A contact form with validation should use HTML5 validation attributes (required, type=email, minlength), CSS :valid/:invalid pseudo-classes for visual feedback (green/red borders), hint text, and proper form fields (name, email, subject, message, submit).",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements HTML5 validation with correct use of :valid and :invalid pseudo-classes, proper form fields, and visual feedback. Structure is clean and follows best practices with appropriate CSS organization. All requested features including name, email, subject, message, and submit button are fully implemented with correct validation attributes and styling.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 32,
+      "prompt": "Build a CSS-only hamburger menu animation (three lines to X)",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\nbody { display: flex; align-items: center; justify-content: center; min-height: 100vh; background: #1a1a2e; }\n.hamburger { display: flex; flex-direction: column; gap: 6px; cursor: pointer; padding: 12px; }\n.hamburger input { display: none; }\n.hamburger span {\n  display: block; width: 30px; height: 3px; background: white;\n  border-radius: 3px; transition: all 0.35s ease;\n  transform-origin: center;\n}\n.hamburger input:checked ~ span:nth-child(2) { transfor…",
+      "ground_truth": "A hamburger to X animation should use three span elements inside a label with hidden checkbox, CSS transforms (rotate + translate) on checked state, middle line fading out with opacity, and smooth transitions.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 6.0,
+        "quality_score": 7.0,
+        "completeness_score": 7.0,
+        "feedback": "The code implements the basic hamburger to X animation with CSS transforms and transitions. However, it has a critical error in the HTML structure where four span elements are used but only three are needed, and the:nth-child selectors are misaligned. The animation works but is not fully correct. Code quality is acceptable with proper structure and readability, though could be improved. Completeness is moderate as it covers core functionality but has implementation flaws.",
+        "score": 6.6
+      },
+      "overall_score": 7.62
+    },
+    {
+      "task_id": 33,
+      "prompt": "Create a CSS glassmorphism card with frosted glass effect",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { margin: 0; padding: 0; box-sizing: border-box; }\nbody {\n  min-height: 100vh; display: flex; align-items: center; justify-content: center;\n  background: linear-gradient(135deg, #667eea, #764ba2, #e94560);\n  font-family: 'Segoe UI', sans-serif;\n}\n.glass-card {\n  width: 360px; padding: 36px;\n  background: rgba(255, 255, 255, 0.15);\n  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);\n  border: 1px solid rgba(255, 255, 255, 0.25);\n  border…",
+      "ground_truth": "A glassmorphism card should use backdrop-filter: blur() for the frosted glass effect, semi-transparent background (rgba), subtle border with transparency, box-shadow for depth, and a colorful background behind the card.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements glassmorphism with correct backdrop-filter blur, semi-transparent backgrounds, and proper border effects. Structure is clean and follows best practices with appropriate use of CSS variables and modern techniques. All requested features are fully implemented including the frosted glass effect, shadow, and interactive button.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    },
+    {
+      "task_id": 34,
+      "prompt": "Design a cookie consent banner fixed to the bottom of the page",
+      "generated_code": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"UTF-8\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n<style>\n* { box-sizing: border-box; margin: 0; padding: 0; }\nbody { font-family: 'Segoe UI', sans-serif; padding: 40px; min-height: 200vh; background: #f4f6f9; }\n.cookie-banner {\n  position: fixed; bottom: 0; left: 0; right: 0;\n  background: #1a1a2e; color: #ccc; z-index: 9999;\n  padding: 20px 24px;\n  display: flex; align-items: center; justify-content: space-between;\n  flex-wrap: wrap; gap: 16px;\n  box-shadow: 0 -4px 12px rgba(0,0,0,0.15);\n}\n.cookie-banner p { …",
+      "ground_truth": "A cookie banner should be fixed to the bottom with high z-index, dark background, informative text with privacy link, accept/decline buttons, responsive flex layout, and ARIA role for accessibility.",
+      "static_analysis": {
+        "html_valid": true,
+        "css_valid": true,
+        "linting_issues": [],
+        "security_issues": [],
+        "score": 10.0
+      },
+      "llm_judge": {
+        "correctness_score": 10.0,
+        "quality_score": 9.0,
+        "completeness_score": 10.0,
+        "feedback": "The code perfectly implements a fixed cookie banner at the bottom of the page with proper styling, accessibility attributes, and responsive layout. All requested features are present and correctly executed. The code quality is high with clean structure and best practices followed.",
+        "score": 9.8
+      },
+      "overall_score": 9.86
+    }
+  ]
+}
